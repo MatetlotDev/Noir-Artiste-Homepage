@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import { StyledLastWork, Wrapper, Flex, Modal } from './styles/LastWork.styled'
+import { StyledLastWork, Wrapper, Flex } from './styles/LastWork.styled'
 import { Button } from './styles/Button.styled'
 
-import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
-import { MdClose } from 'react-icons/md'
+import { useDispatch } from 'react-redux'
 
 import { theme } from './App'
 
@@ -17,41 +16,26 @@ const images = [
     'https://images.squarespace-cdn.com/content/v1/5b37edcfaf20967da76a2a29/1632814041945-B3BBDTAC0UJGZY0DOI72/NOIR+-+Themis+Fragment+-+170x120cm+-+Acrilic+on+canvas+-+2021.jpg?format=500w'
 ]
 
-export default function LastWork() {
+export default function LastWork() {    
 
-    const [modalState, setModalState] = useState('none')
-    const [modalContent, setModalContent] = useState(0)
+    const dispatch = useDispatch()
 
-    const showModal = index => {
-        setModalContent(index)
-        setModalState('flex')
+    const handleDispatch = i => {
+        dispatch({type: 'updateImages', images: images})
+        dispatch({type: 'updateActual', actual: i})
+        dispatch({type: 'openModal'})
     }
-
-    const prevImage = () => modalContent === 0 ? setModalContent(images.length - 1) : setModalContent(modalContent - 1)
-    
-    const nextImage = () => modalContent === images.length - 1 ? setModalContent(0) : setModalContent(modalContent + 1)
-
-    const closeModal = () => setModalState('none')
-    
 
     return (
         <StyledLastWork>
             <h3>Last works</h3>
             <Wrapper>
-                {images.map((el, i) => (
-                    <img onClick={() => showModal(i)} src={el} alt='poster' />
-                ))}
+                {images.map((el, i) => <img key={el} onClick={() => handleDispatch(i)} src={el} alt='poster' />)}
             </Wrapper>
             <Flex>
                 <Button color={theme.colors.black} font='1rem'>View More / Autres Oeuvres</Button>
                 <Button color={theme.colors.black} font='1rem'>Work available / Oeuvres Disponibles</Button>
-            </Flex>
-            <Modal state={modalState}>
-                <BsChevronLeft onClick={prevImage} size='3rem' color={theme.colors.white} />
-                <img src={images[modalContent]} alt="poster" />
-                <BsChevronRight onClick={nextImage} size='3rem' color={theme.colors.white} />
-                <MdClose onClick={closeModal} className='close' size='3rem' color={theme.colors.white} />
-            </Modal>
+            </Flex>                
         </StyledLastWork>
     )
 }

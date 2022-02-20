@@ -1,13 +1,25 @@
-import GlobalStyle from "./styles/Global.styled"
+import React, { useState } from 'react'
 
 import { ThemeProvider } from "styled-components"
+import GlobalStyle from "./styles/Global.styled"
 
 import Nav from "./Nav"
 import Header from "./Header"
-import Discovery from './Discovery'
+import Discover from './Discover'
 import PaintingsHeader from "./PaintingsHeader"
 import PaintingsDiscovery from "./PaintingsDiscovery"
 import LastWork from "./LastWork"
+import MuralsHeader from "./MuralsHeader"
+import MuralsContent from "./MuralsContent"
+import Modal from "./Modal"
+
+import { Provider } from 'react-redux'
+import { createStore, combineReducers } from 'redux'
+import actual from '../reducers/actual.reducer'
+import images from '../reducers/images.reducer'
+import state from '../reducers/state.reducer'
+
+const store = createStore(combineReducers({ actual, images, state}))
 
 export const theme = {
   colors: {
@@ -19,16 +31,23 @@ export const theme = {
 }
 
 export default function App() {
+
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Nav />
-      <Header />
-      <Discovery />
-      <PaintingsHeader />
-      <PaintingsDiscovery />
-      <LastWork />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Nav />
+        <Header />
+        <Discover />
+        <PaintingsHeader />
+        <PaintingsDiscovery />
+        <LastWork />
+        <MuralsHeader />
+        <MuralsContent />
+
+        <Modal />
+      </ThemeProvider>
+    </Provider>
   )
 }
 
