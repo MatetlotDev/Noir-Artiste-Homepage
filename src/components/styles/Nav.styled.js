@@ -9,6 +9,8 @@ export const StyledNav = styled.nav`
     top: 0;
     width: 100%;
     color: ${({theme}) => theme.colors.white};
+    background: ${({bg}) => bg};
+    transition: all .5s;
 
     img {
         height: auto;

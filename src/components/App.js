@@ -4,6 +4,10 @@ import { ThemeProvider } from "styled-components"
 
 import Nav from "./Nav"
 import Header from "./Header"
+import Discovery from './Discovery'
+import PaintingsHeader from "./PaintingsHeader"
+import PaintingsDiscovery from "./PaintingsDiscovery"
+import LastWork from "./LastWork"
 
 export const theme = {
   colors: {
@@ -20,6 +24,10 @@ export default function App() {
       <GlobalStyle />
       <Nav />
       <Header />
+      <Discovery />
+      <PaintingsHeader />
+      <PaintingsDiscovery />
+      <LastWork />
     </ThemeProvider>
   )
 }

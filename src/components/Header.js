@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StyledHeader } from './styles/header.styled'
+import { StyledHeader } from './styles/Header.styled'
 import { Button } from './styles/Button.styled'
 
 import { theme } from './App'

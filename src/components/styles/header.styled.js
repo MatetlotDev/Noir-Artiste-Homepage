@@ -37,6 +37,6 @@ export const StyledHeader = styled.header`
         font-size: 2.3rem;
         font-weight: 300;
         color: ${({theme}) => theme.colors.lightGrey};
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
     }
 `
