@@ -23,4 +23,10 @@ export const StyledSectionHeader = styled.div`
     h2 {
         font-weight: 300;
     }
+    h4 {
+        text-transform: uppercase;
+        color: ${({theme}) => theme.colors.lightGrey};
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
 `
