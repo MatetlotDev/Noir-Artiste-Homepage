@@ -8,8 +8,8 @@ export const StyledNav = styled.nav`
     z-index: 10;
     top: 0;
     width: 100%;
-    color: ${({theme}) => theme.colors.white};
-    background: ${({bg}) => bg};
+    color: ${({ theme }) => theme.colors.white};
+    background: ${({ bg }) => bg};
     transition: all .5s;
 
     img {
@@ -19,20 +19,29 @@ export const StyledNav = styled.nav`
         max-width: 100%;
         cursor: pointer;
     }
-
+    
     ul {
         display: flex;
         align-items: center;
 
         li {
             list-style: none;
-            margin-left: 2rem;
+            margin: 1rem;
             text-transform: uppercase;
             cursor: pointer;
-
+    
             &:hover {
-                color: ${({theme}) => theme.colors.darkGrey};
+                color: ${({ theme }) => theme.colors.darkGrey};
             }
         }
+
+        @media(max-width: ${({ theme }) => theme.tablet}) {
+            display: none;
+        }
+    }
+
+    @media(max-width: ${({ theme }) => theme.tablet}) {
+        position: absolute;
+        width: fit-content;
     }
 `

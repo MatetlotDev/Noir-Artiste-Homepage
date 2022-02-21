@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledDiscovery = styled.section`
+export const StyledDiscover = styled.section`
     display: flex;
     justify-content: center;
     padding: 4rem;
@@ -10,6 +10,7 @@ export const StyledDiscovery = styled.section`
         margin: 1rem;
 
         img {
+            width: 20vw;
             max-width: 240px;
         }
         h6 {

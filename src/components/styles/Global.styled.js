@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Sulphur Point', sans-serif;
     }
+
+    body {
+        overflow-x: hidden;
+    }
 `
 
 export default GlobalStyle

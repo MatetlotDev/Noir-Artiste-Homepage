@@ -30,7 +30,9 @@ export const theme = {
     black: '#000',
     darkGrey: '#4C4C4C',
     lightGrey: '#9c9999',
-  }
+  },
+  tablet: '1050px',
+  mobile: '650px' 
 }
 
 export default function App() {
@@ -53,7 +55,7 @@ export default function App() {
           <About />
           <Contact />
         </main>
-        
+
         <Footer />
 
         <Modal />

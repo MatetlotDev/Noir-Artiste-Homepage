@@ -5,27 +5,29 @@ import { Button } from './styles/Button.styled'
 
 import { theme } from './App'
 
+
 export default function Nav() {
 
   const [navBg, setNavBg] = useState('none')
 
-  window.addEventListener('scroll', () => window.pageYOffset > 0 ? setNavBg(theme.colors.black) : setNavBg('none'))
+  window.addEventListener('scroll', () => window.pageYOffset > 0 && window.innerWidth > 1050 ? setNavBg(theme.colors.black) : setNavBg('none'))
+ 
 
   return (
     <StyledNav bg={navBg}>
       <img src="https://images.squarespace-cdn.com/content/v1/5b37edcfaf20967da76a2a29/7a1ed519-eeb4-4240-a7ab-93555164d42b/logo+png+blanc+petit.png?format=1500w" alt="logo" />
-      <ul>
-        <li>Se connecter</li>
-        <li>Home</li>
-        <li>Biography</li>
-        <li>Paintings</li>
-        <li>Drawings</li>
-        <li>Murals</li>
-        <li>Contacts</li>
-        <li>
-          <Button color={theme.colors.white}>Shop</Button>
-        </li>
-      </ul>
+        <ul>
+          <li>Se connecter</li>
+          <li>Home</li>
+          <li>Biography</li>
+          <li>Paintings</li>
+          <li>Drawings</li>
+          <li>Murals</li>
+          <li>Contacts</li>
+          <li>
+            <Button color={theme.colors.white}>Shop</Button>
+          </li>
+        </ul>
     </StyledNav>
   )
 }

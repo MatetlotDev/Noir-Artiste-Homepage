@@ -8,8 +8,12 @@ export const StyledPaintingsDiscovery = styled.section`
     figure {
         margin: 0 3rem;
 
+        img {
+            width: 25vw;
+            max-width: 300px;
+        }
         div {
-            padding: 2rem;
+            padding: 2vw;
             background: ${({theme}) => theme.colors.black};
             color: ${({theme}) => theme.colors.white};
             transform: translate(10%, -60%);

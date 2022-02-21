@@ -14,20 +14,22 @@ export const StyledLastWork = styled.section`
 `
 
 export const Wrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 48vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
     img {
         border: 2px solid ${({theme}) => theme.colors.white};
-        max-width: 16vw;
+        width: 30vw;
+        max-width: 300px;
         cursor: pointer;
+        min-height: -webkit-fill-available;
     }
 `
 
 export const Flex = styled.div`
     display: flex;
-    width: 50%;
+    width: 100%;
+    max-width: 800px;
     justify-content: space-around;
     margin: 2rem;
 `

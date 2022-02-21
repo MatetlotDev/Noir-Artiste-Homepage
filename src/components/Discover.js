@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StyledDiscovery } from './styles/Discovery.styled'
+import { StyledDiscover } from './styles/Discover.styled'
 
 const content = [
     {
@@ -23,7 +23,7 @@ const content = [
 
 export default function Discovery() {
     return (
-        <StyledDiscovery>
+        <StyledDiscover>
             {content.map(({ image, title }) => (
                 <div key={title}>
                     <img src={image} alt="overview" />
@@ -31,6 +31,6 @@ export default function Discovery() {
                     <p>View more</p>
                 </div>
             ))}
-        </StyledDiscovery>
+        </StyledDiscover>
     )
 }
