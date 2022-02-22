@@ -12,6 +12,10 @@ export const StyledDiscover = styled.section`
         img {
             width: 20vw;
             max-width: 240px;
+
+            @media(max-width: ${({theme}) => theme.mobile}) {
+                width: 90%;
+            }
         }
         h6 {
             font-size: 1rem;
@@ -21,5 +25,10 @@ export const StyledDiscover = styled.section`
         p {
             color: ${({theme}) => theme.colors.lightGrey}
         }
+    }
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        flex-direction: column;
+        padding: 1rem;
     }
 `

@@ -14,7 +14,6 @@ export default function Header() {
   const [iconClose, setIconClose] = useState('none')
 
   const handleMenu = () => {
-    console.log('détecté')
     if(iconOpen === 'block') {
       setTranslate('-20vw')
       setIconOpen('none')

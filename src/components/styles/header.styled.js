@@ -9,17 +9,29 @@ export const StyledHeader = styled.header`
         color: ${({theme}) => theme.colors.white};
         font-size: 5.3rem;
         font-weight: 300;
+
+        @media(max-width: ${({theme}) => theme.mobile}) {
+            font-size: 3.3rem
+        }
     }
     h4 {
         font-size: 2.3rem;
         color: ${({theme}) => theme.colors.lightGrey};
         margin: 1rem;
+
+        @media(max-width: ${({theme}) => theme.mobile}) {
+            font-size: 1.8rem
+        }
     }
     a {
         font-size: 2.3rem;
         font-weight: 300;
         color: ${({theme}) => theme.colors.lightGrey};
         margin-bottom: 4rem;
+
+        @media(max-width: ${({theme}) => theme.mobile}) {
+            font-size: 1.8rem
+        }
     }
 `
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { ThemeProvider } from "styled-components"
 import GlobalStyle from "./styles/Global.styled"
@@ -12,6 +12,8 @@ import LastWork from "./LastWork"
 import MuralsHeader from "./MuralsHeader"
 import MuralsContent from "./MuralsContent"
 import About from './About'
+import Contact from './Contact'
+import Footer from './Footer'
 import Modal from "./Modal"
 
 import { Provider } from 'react-redux'
@@ -19,8 +21,6 @@ import { createStore, combineReducers } from 'redux'
 import actual from '../reducers/actual.reducer'
 import images from '../reducers/images.reducer'
 import state from '../reducers/state.reducer'
-import Contact from './Contact'
-import Footer from './Footer'
 
 const store = createStore(combineReducers({ actual, images, state }))
 

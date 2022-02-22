@@ -29,4 +29,9 @@ export const StyledSectionHeader = styled.div`
         font-weight: 300;
         font-size: 1.5rem;
     }
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        font-size: 1.5rem;
+        padding: 5rem;
+    }
 `

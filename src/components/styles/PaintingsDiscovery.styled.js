@@ -11,6 +11,10 @@ export const StyledPaintingsDiscovery = styled.section`
         img {
             width: 25vw;
             max-width: 300px;
+
+            @media(max-width: ${({theme}) => theme.mobile}) {
+                width: 90%;
+            }
         }
         div {
             padding: 2vw;
@@ -34,5 +38,10 @@ export const StyledPaintingsDiscovery = styled.section`
                 }
             }
         }
+    }
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        flex-direction: column;
+        align-items: center;
     }
 `

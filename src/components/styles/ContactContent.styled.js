@@ -26,6 +26,9 @@ export const StyledContactContent = styled.section`
         width: 100%;
     }
     
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        padding: 2rem;
+    }
 `
 
 export const Flex = styled.div`

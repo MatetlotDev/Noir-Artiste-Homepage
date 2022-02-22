@@ -23,6 +23,14 @@ export const Wrapper = styled.div`
         max-width: 300px;
         cursor: pointer;
         min-height: -webkit-fill-available;
+
+        @media(max-width: ${({theme}) => theme.mobile}) {
+            width: 100%;
+        }
+    }
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        grid-template-columns: repeat(1, 1fr);
     }
 `
 
@@ -32,4 +40,13 @@ export const Flex = styled.div`
     max-width: 800px;
     justify-content: space-around;
     margin: 2rem;
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        flex-direction: column;
+        align-items: center;
+
+        & :nth-child(1) {
+            margin-bottom: 1rem;
+        }
+    }
 `

@@ -14,6 +14,11 @@ export const StyledModal = styled.div`
 
     img {
         min-height: -webkit-fill-available;
+
+        @media(max-width: ${({theme}) => theme.tablet}) {
+            max-height: 50vh;
+            min-height: 0;
+        }
     }
     .close {
         position: absolute;

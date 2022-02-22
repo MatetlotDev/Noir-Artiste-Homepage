@@ -13,4 +13,8 @@ export const Button = styled.button`
         background: ${({color}) => color};
         color: ${({theme}) => theme.colors.darkGrey};
     }
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        font-size: .8rem;
+    }
 `

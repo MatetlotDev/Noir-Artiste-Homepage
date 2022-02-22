@@ -19,5 +19,14 @@ export const Wrapper = styled.div`
         object-fit: cover;
         object-position: center;
         cursor: pointer;
+
+        @media(max-width: ${({theme}) => theme.mobile}) {
+            width: 100%;
+            max-width: 600px;
+        }
+    }
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        grid-template-columns: repeat(1, 1fr);
     }
 `
